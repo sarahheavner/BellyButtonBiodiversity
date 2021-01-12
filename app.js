@@ -1,10 +1,10 @@
-d3.json("../data/samples.json").then(function(data) {
+d3.json("data/samples.json").then(function(data) {
   console.log(data);
 });
 
 function init () {
 // Use d3 to read json data and append names to dropdown menu
-  d3.json("../data/samples.json").then((data) => {
+  d3.json("data/samples.json").then((data) => {
     data.names.forEach((person) => {
     d3.select("#selDataset").append("option")
                           .text(person)
@@ -20,7 +20,7 @@ function init () {
 
 //Create function that uses d3 to read json data and append metadata to panel
 function panelInfo(personID) {
-  d3.json("../data/samples.json").then((data) => {
+  d3.json("data/samples.json").then((data) => {
     //store metadata into variable
     var metadata = data.metadata;
     //Filter data by personID
@@ -42,7 +42,7 @@ function panelInfo(personID) {
 
 //Create function that uses d3 to read json data and append graphs
 function chartInfo(personID) {
-  d3.json("../data/samples.json").then((data) => {
+  d3.json("data/samples.json").then((data) => {
     //store bacteria sample data into variable
     var chartData = data.samples;
     //filter data by personID
